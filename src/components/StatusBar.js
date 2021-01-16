@@ -6,7 +6,7 @@ class StatusBar extends Component {
         return (
             <div>
                 <h4>Status Bar</h4>
-                <User/>
+                <User currentUser={this.props.currentUser}/>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core'
 import { AccountCircle, Menu } from '@material-ui/icons'
-import { useStyles } from './NavBarStyles'
+import { useStyles } from '../styling/Styles'
 
 function NavBar({currentUser}){
     const classes = useStyles()

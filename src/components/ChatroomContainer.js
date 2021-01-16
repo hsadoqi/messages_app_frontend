@@ -7,17 +7,20 @@ class ChatroomContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
-
+            currentChatroom: {
+                name: "Spanish"
+            }
         }
     }
+
 
     render(){
         return (
             <div>
                 <h1>Chatroom Container</h1>
-                <LeftSideBar/>
-                <Chatroom />
-                <RightSideBar/>
+                <LeftSideBar channels={this.props.channels} currentChatroom={this.state.currentChatroom}/>
+                <Chatroom currentUser={this.props.currentUser}/>
+                <RightSideBar currentUser={this.props.currentUser}/>
             </div>
         )
     }

@@ -8,7 +8,18 @@ class App extends Component {
     this.state = {
       currentUser: {
         name: "Hanaa"
-      }
+      },
+      channels: [
+        {
+          name: "French"
+        },
+        {
+          name: "Spanish"
+        }, 
+        {
+          name: "English"
+        }
+      ]
     }
   }
 
@@ -16,8 +27,7 @@ class App extends Component {
     return (
       <div>
         <NavBar currentUser={this.state.currentUser}/>
-        <ChatroomContainer currentUser={this.state.currentUser}/>
-
+        <ChatroomContainer currentUser={this.state.currentUser} channels={this.state.channels}/>
       </div>
     )
   }

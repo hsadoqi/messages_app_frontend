@@ -1,58 +1,32 @@
-import { Drawer, List, Toolbar, makeStyles, ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
+import { Drawer, List, Toolbar, ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import {Star} from '@material-ui/icons'
+import { useStyles } from '../styling/Styles'
 
-const drawerWidth = 240 
-
-const colors = {
-    primary: "#05386B",
-    primaryText: "#ffffff",
-    lightSecondary: "#92ffc6",
-    secondary: "#5CDB95",
-    secondaryText: "#000000",
-    textStyle: "EDF5E1"
-}
-
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex'
-    }, 
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0
-    }, 
-    drawerPaper: {
-        width: drawerWidth,
-        background: colors.lightSecondary
-    },
-    starIcon: {
-        color: colors.primary
-    }, 
-    listItem: {
-        color: colors.primary
-    }
-}))
-
-function LeftSideBar() {
+function LeftSideBar( { channels, currentChatroom }) {
     const classes = useStyles()
     return (
             <Drawer
-                className={classes.drawer}
+                className={classes.leftDrawer}
                 variant="permanent"
                 classes={{
-                    paper: classes.drawerPaper
+                    paper: classes.leftDrawerPaper
                 }}
             >
                 <Toolbar/>
                 <div className={classes.drawerContainer}>
                     <List>
-                        {["French", "English", "Spanish"].map(chatroom => {
+                        {channels.map(chatroom => {
                             return (
-                                <ListItem button className={classes.listItem}>
+                                <ListItem 
+                                    button 
+                                    key={chatroom.name}
+                                    className={classes.listItem}
+                                    selected={chatroom.name === currentChatroom.name}
+                                >
                                     <ListItemIcon>
                                         <Star className={classes.starIcon}/>
                                     </ListItemIcon>
-                                    <ListItemText primary={chatroom}/>
+                                    <ListItemText primary={chatroom.name}/>
                                 </ListItem>)
                         })}
                     </List>

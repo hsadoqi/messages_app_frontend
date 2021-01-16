@@ -6,8 +6,12 @@ const colors = {
     lightSecondary: "#92ffc6",
     secondary: "#5CDB95",
     secondaryText: "#000000",
-    textStyle: "EDF5E1"
+    textStyle: "EDF5E1",
+    lightPrimary: "#42609a"
 }
+
+const leftDrawerWidth = 240 
+const rightDrawerWidth = 320
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +32,34 @@ const useStyles = makeStyles((theme) => ({
     }, 
     accountIcon: {
         color: colors.primary
+    },
+    rightDrawer: {
+        width: rightDrawerWidth,
+        flexShrink: 0,
+    },
+    rightDrawerPaper: {
+        width: rightDrawerWidth,
+        background: colors.lightSecondary,
+    },
+    drawerContainer: {
+        overflow: 'auto',
+    },
+    leftDrawer: {
+        width: leftDrawerWidth,
+        flexShrink: 0
+    }, 
+    leftDrawerPaper: {
+        width: leftDrawerWidth,
+        background: colors.lightSecondary
+    },
+    starIcon: {
+        color: colors.primary
+    }, 
+    listItem: {
+        color: colors.primary
     }
+
+
   }));
 
 export { useStyles }
