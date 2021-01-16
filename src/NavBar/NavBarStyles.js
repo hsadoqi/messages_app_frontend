@@ -10,16 +10,21 @@ const colors = {
 }
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex'
+    },
     title: {
       flexGrow: 1,
-      color: colors.primary
+      color: colors.textStyle,
     }, 
     toolBar: {
-        background: colors.secondary
+        background: colors.secondary,
+        zIndex: theme.zIndex.drawer + 1
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        color: colors.textStyle
+        color: colors.textStyle,
+        background: colors.primary
     }, 
     accountIcon: {
         color: colors.primary
