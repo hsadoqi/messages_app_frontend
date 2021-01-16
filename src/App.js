@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ChatroomContainer from './components/ChatroomContainer'
-import NavBar from './NavBar'
+import NavBar from './NavBar/NavBar'
 
 class App extends Component {
   constructor(){

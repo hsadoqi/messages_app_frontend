@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import UsersContainer from './UsersContainer'
 import StatusBar from './StatusBar'
 
-class SideBar extends Component {
+class RightSideBar extends Component {
     render(){
         return (
             <div>
@@ -14,4 +14,4 @@ class SideBar extends Component {
     }
 }
 
-export default SideBar
+export default RightSideBar

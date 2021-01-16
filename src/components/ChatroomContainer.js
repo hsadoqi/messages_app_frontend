@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Chatroom from './Chatroom'
-import SideBar from './SideBar'
+import RightSideBar from './RightSideBar'
+import LeftSideBar from './LeftSideBar'
 
 class ChatroomContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            
+
         }
     }
 
@@ -14,8 +15,9 @@ class ChatroomContainer extends Component {
         return (
             <div>
                 <h1>Chatroom Container</h1>
+                <LeftSideBar/>
                 <Chatroom />
-                <SideBar/>
+                <RightSideBar/>
             </div>
         )
     }
