@@ -6,7 +6,8 @@ function NavBar({currentUser}){
     const classes = useStyles()
 
     return (
-        <AppBar position="static" className={classes.toolBar}>
+        <div className={classes.root}>
+        <AppBar position="fixed" className={classes.toolBar}>
             <Toolbar className={classes.toolbar}>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <Menu />
@@ -27,6 +28,7 @@ function NavBar({currentUser}){
                 </div>
             </Toolbar>
         </AppBar>
+        </div>
     )
 }
 
