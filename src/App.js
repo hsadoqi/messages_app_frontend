@@ -17,6 +17,7 @@ class App extends Component {
       <div>
         <NavBar currentUser={this.state.currentUser}/>
         <ChatroomContainer currentUser={this.state.currentUser}/>
+
       </div>
     )
   }
