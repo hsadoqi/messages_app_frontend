@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Chatroom from './Chatroom'
-import RightSideBar from './RightSideBar'
-import LeftSideBar from './LeftSideBar'
+import Chatroom from '../components/Chatroom'
+import RightSideBar from '../components/RightSideBar'
+import LeftSideBar from '../components/LeftSideBar'
 
 class ChatroomContainer extends Component {
     constructor(props){
