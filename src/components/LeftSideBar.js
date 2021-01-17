@@ -1,15 +1,53 @@
 import { Drawer, List, Toolbar, ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import {Star} from '@material-ui/icons'
-import { useStyles } from '../styling/Styles'
+import { makeStyles } from '@material-ui/styles'
 
-function LeftSideBar( { channels, currentChatroom }) {
+const colors = {
+    primary: "#05386B",
+    primaryText: "#ffffff",
+    lightSecondary: "#92ffc6",
+    secondary: "#5CDB95",
+    secondaryText: "#000000",
+    textStyle: "EDF5E1",
+    lightPrimary: "#42609a"
+}
+
+const drawerWidth = "40%"
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex", 
+        zIndex: 3
+        
+    }, 
+    drawer: {
+        width: drawerWidth, 
+        flexShrink: 0
+    }, 
+    drawerPaper: {
+        width: drawerWidth, 
+        background: colors.lightPrimary
+    },
+    drawerContainer: {
+        overflow: "auto"
+    },
+    listItem: {
+        color: colors.primaryText
+    },
+    starIcon: {
+        color: colors.secondary
+    }
+}))
+
+function LeftSideBar( { channels, currentChatroom, handleClick, display }) {
     const classes = useStyles()
     return (
+        <div className={classes.root} style={{display}}>
             <Drawer
-                className={classes.leftDrawer}
+                className={classes.drawer}
                 variant="permanent"
                 classes={{
-                    paper: classes.leftDrawerPaper
+                    paper: classes.drawerPaper
                 }}
             >
                 <Toolbar/>
@@ -22,6 +60,7 @@ function LeftSideBar( { channels, currentChatroom }) {
                                     key={chatroom.name}
                                     className={classes.listItem}
                                     selected={chatroom.name === currentChatroom.name}
+                                    onClick={() => handleClick(chatroom)}
                                 >
                                     <ListItemIcon>
                                         <Star className={classes.starIcon}/>
@@ -32,9 +71,9 @@ function LeftSideBar( { channels, currentChatroom }) {
                     </List>
                 </div>
             </Drawer>
+        </div>
     )
 }
-
 
 export default LeftSideBar
 
