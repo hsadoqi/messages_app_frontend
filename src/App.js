@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ChatroomContainer from './containers/ChatroomContainer'
 import NavBar from './NavBar/NavBar'
+import '../public/index.scss'
 
 class App extends Component {
   constructor(){
